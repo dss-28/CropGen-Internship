@@ -1,53 +1,85 @@
-# CropGen-Internship
+# 🌱 CropGen - ML for Plant Disease Detection & Satellite Cloud Masking ☁️🌾  
 
-# CropGen - ML-Driven Plant Disease Detection
+CropGen is an AI platform that tackles **two key AgriTech challenges**:  
 
-## Overview
+1. 🌾 **Plant Disease Detection** from RGB field images  
+2. ☁️ **Cloud Masking** for satellite imagery  
 
-CropGen is an AI-powered platform for **plant disease detection** that helps farmers and agritech stakeholders **identify crop diseases early** and take informed actions.
+---
 
-## Problem Statement
+## 1️⃣ Plant Disease Detection (RGB Images)  
 
-* Early disease detection is crucial for **reducing crop losses**.
-* Traditional methods are **manual, slow, and error-prone**.
-* CropGen automates **multi-class disease detection** using advanced ML models.
+**Objective:** Detect crop diseases early to reduce losses.  
 
-## My Contribution
+**Approach:**  
+- Hierarchical multi-class classification (**100+ disease classes**)  
+- Input: RGB crop images from field  
+- Models: CNNs, hierarchical classifiers, multi-label learning  
+- Integration: Web API via Flask/FastAPI  
 
-* Designed and implemented **hierarchical multi-class disease detection models** (currently 100+ classes).
-* Developed **multi-domain ML pipelines** integrating image-based and feature-based data.
-* Improved **prediction accuracy and scalability** over baseline models.
-* Collaborated with team on **product integration and real-world deployment considerations**.
+**Impact:**  
+- ✅ Achieved **baseline-beating accuracy**  
+- ✅ Built **scalable pipelines** for new crops and diseases  
 
-## Tech Stack
+**Architecture (Conceptual):**  
 
-* **ML / DL:** PyTorch, TensorFlow, OpenCV
-* **Modeling Techniques:** CNNs, Hierarchical Classification, Multi-Label Learning
-* **Data Handling:** Pandas, NumPy
-* **Web Integration:** Flask / FastAPI backend (interfacing with 4 developers’ web platform)
+RGB Crop Images
+│
+├─> Data Preprocessing
+│
+├─> Hierarchical Multi-Class Classifier
+│
+├─> Model Training & Evaluation
+│
+└─> Deployment via Web API
 
-## Architecture
 
-1. Data Collection & Preprocessing
-2. Hierarchical Multi-Class Classification Pipeline
-3. Model Training & Evaluation
-4. Integration with Web Interface & API
+---
 
-## Results / Impact
+## 2️⃣ Satellite Cloud Masking  
 
-* Built **100-class hierarchical model** in just 3 weeks.
-* Achieved **baseline-beating accuracy** in plant disease detection.
-* Enabled **scalable pipeline** for adding new crops and diseases.
+**Objective:** Remove clouds from satellite images to improve downstream crop monitoring.  
 
-## How to Run (Optional)
+**Approach:**  
+- CNN Encoder–Decoder & U-Net architectures  
+- Input: Cloudy satellite images  
+- Output: Cloud-free imagery ready for analysis  
+- Integration: Feeds into crop monitoring and disease detection pipelines  
 
+**Impact:**  
+- ✅ Improved satellite image quality and usability  
+- ✅ Enabled more accurate crop and yield monitoring  
+
+**Architecture (Conceptual):**  
+
+
+Cloudy Satellite Images
+│
+├─> Data Preprocessing
+│
+├─> Cloud Masking (U-Net / Encoder–Decoder)
+│
+└─> Clean Images for Downstream Analysis
+
+
+---
+
+## ⚙️ Tech Stack  
+
+- **ML/DL:** PyTorch, TensorFlow, OpenCV  
+- **Models:** CNNs, U-Net, Encoder–Decoder, Hierarchical Classification  
+- **Data Handling:** Pandas, NumPy  
+- **Web Integration:** Flask, FastAPI  
+
+---
+
+## 🚀 How to Run (Optional)  
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/cropgen.git
+git clone https://github.com/yourusername/cropgen.git  
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r requirements.txt  
 
 # Run demo
-python app.py
-```
+python app.py  
